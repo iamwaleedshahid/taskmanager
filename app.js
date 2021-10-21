@@ -21,13 +21,11 @@ app.use('/api/v1/tasks', tasks)
 const start = async () => {
     try {
         await connectDB(process.env.MONGODB_STRING)
-        app.listen(port, console.log(`Listening on port: ${port}`))
+        app.listen(port, () => console.log('Server running...'))
     } catch (error) {
         console.log(error)
     }
 }
-
-
 start()
 
 
