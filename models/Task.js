@@ -11,7 +11,7 @@ const TaskSchema = new mongoose.Schema({
         type: Boolean,
         default: false,
     },
-})
+}, {collection: 'tasks'})
 
 
 module.exports = mongoose.model('Task', TaskSchema)
