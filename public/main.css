@@ -274,6 +274,10 @@ form > :last-child {
 .text-success {
   color: var(--green-dark);
 }
+.hidden {
+  display: none;
+}
+
 /* loading */
 @keyframes spinner {
   to {

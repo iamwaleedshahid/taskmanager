@@ -8,7 +8,7 @@ const auth = require('../middleware/auth')
 const User = require("../models/User");
 
 router.post(
-    "/signup",
+    "/register",
     [
         check("username", "Please Enter a Valid Username")
             .not()
@@ -65,9 +65,8 @@ router.post(
             },
                 (err, token) => {
                     if (err) throw err;
-                    res.status(200).json({
-                        token
-                    });
+                    res.cookie('token', token, {httpOnly: true})
+                    res.status(200).json({token});
                 }
             );
         } catch (err) {
@@ -107,7 +106,7 @@ router.post(
             const isMatch = await bcrypt.compare(password, user.password);
             if (!isMatch)
                 return res.status(400).json({
-                    message: "Incorrect Password !"
+                    message: "Incorrect Password!"
                 });
 
             const payload = {
@@ -124,9 +123,8 @@ router.post(
                 },
                 (err, token) => {
                     if (err) throw err;
-                    res.status(200).json({
-                        token
-                    });
+                    res.cookie('token', token, {httpOnly: true})
+                    res.status(200).json({token});
                 }
             );
         } catch (e) {

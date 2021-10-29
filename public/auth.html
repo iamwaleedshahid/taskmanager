@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <!-- normalize css -->
+    <link rel="stylesheet" href="./normalize.css" />
+    <!-- main css -->
+    <link rel="stylesheet" href="./main.css" />
+    <title>Task Manager Login/Register</title>
+  </head>
+  <body>
+    <form class="task-form" method="post" id="login">
+      <h4>Login</h4>
+      <div class="form-control" style="display: flex; flex-direction: column; gap: 5px;">
+        <label for="email">Your Email:</label>
+        <input type="email" required name="email" id="l-email" value="" class="form-input">
+        <label for="password">Your Password:</label>
+        <input type="password" required name="password" id="l-password" value="" class="form-input">
+        <button type="submit" class="btn" style="margin: 10px 0;">Login</button>
+        <label>Not registered? <a href="#" id="toggle-register">Register Now!</a></label>
+      </div>
+      <div class="form-alert"></div>
+    </form>
+
+    <form class="task-form hidden" method="post" id="register">
+        <h4>Register</h4>
+        <div class="form-control" style="display: flex; flex-direction: column; gap: 5px;">
+          <label for="username">Username:</label>
+          <input type="texts" required name="username" id="r-username" class="form-input">
+          <label for="email">Email:</label>
+          <input type="email" required name="email" id="r-email" class="form-input">
+          <label for="password">Password:</label>
+          <input type="password" name="password" id="r-password" class="form-input">
+          <button type="submit" class="btn" style="margin: 10px 0;">Register</button>
+          <label>Already registered? <a href="#" id="toggle-login">Login</a></label>
+        </div>
+        <div class="form-alert"></div>
+      </form>
+    <!-- axios -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./auth.js" ></script>
+  </body>
+</html>

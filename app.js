@@ -5,10 +5,12 @@ const app = express()
 const tasks = require('./routes/tasks')
 const auth = require('./routes/auth')
 const connectDB = require('./db/connect')
+const cookieParser = require('cookie-parser')
 
 // middleware
 app.use(express.static('./public'))
 app.use(express.json())
+app.use(cookieParser())
 
 
 // routes
