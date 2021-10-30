@@ -1,3 +1,17 @@
+const fetchUser = async () => {
+    const res = await fetch('/api/v1/auth/me', {
+        method: "GET"
+    })
+    if (res.status === 200) {
+        window.location.replace('/')
+    }
+  }
+  
+  
+fetchUser()
+
+
+
 const loginForm = document.querySelector('form#login')
 const registerForm = document.querySelector('form#register')
 

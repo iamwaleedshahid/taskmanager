@@ -1,3 +1,14 @@
+const fetchUser = async () => {
+  const res = await fetch('/api/v1/auth/me', {
+      method: "GET"
+  })
+  if (res.status !== 200) {
+      window.location.replace('/auth.html')
+  }
+}
+fetchUser()
+
+
 const taskIDDOM = document.querySelector('.task-edit-id')
 const taskNameDOM = document.querySelector('.task-edit-name')
 const taskCompletedDOM = document.querySelector('.task-edit-completed')

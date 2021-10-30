@@ -1,3 +1,16 @@
+const fetchUser = async () => {
+  const res = await fetch('/api/v1/auth/me', {
+      method: "GET"
+  })
+  if (res.status !== 200) {
+      window.location.replace('/auth.html')
+  }
+}
+
+
+fetchUser()
+
+
 const tasksDOM = document.querySelector('.tasks')
 const loadingDOM = document.querySelector('.loading-text')
 const formDOM = document.querySelector('.task-form')
